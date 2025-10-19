@@ -16,7 +16,6 @@ fastapi = {extras = ["standart"], version = "^0.119.0"}
 uvicorn = "^0.38.0"
 jinja2 = "^3.1.6"
 pillow = "^12.0.0"
-pyrasite = "^2.0"
 
 [tool.poetry.group.dev.dependencies]
 isort = ">=6.0.1,<7.0.0"

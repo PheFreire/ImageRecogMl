@@ -1,0 +1,10 @@
+toml
+pydantic
+numpy
+opencv-python
+duckdi
+simple-duck-ml
+fastapi
+uvicorn
+jinja2
+pillow

@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: draw-ml
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: make run
+    autoDeploy: true
+
+    envVars:
+      - key: ROOT
+        value: $ROOT 
+      - key: API_HOST
+        value: $API_HOST 
+      - key: API_PORT
+        value: $API_PORT 
+      - key: LEARNING_RATE
+        value: $LEARNING_RATE 
+      - key: MODEL_NAME
+        value: $MODEL_NAME 
+      - key: BATCH_SIZE
+        value: $BATCH_SIZE 
+      - key: EPOCHS
+        value: $EPOCHS 
+      - key: SAMPLES_PER_CLASS
+        value: $SAMPLES_PER_CLASS 
+
+    disk:
+      name: persistent-storage
+      mountPath: /data
+      sizeGB: 1
+
