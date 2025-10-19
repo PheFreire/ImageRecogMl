@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Draw ML</title>
+  <style>
+    body { 
+      font-family: system-ui, 
+      -apple-system, 
+      Segoe UI, 
+      Roboto, 
+      Ubuntu, 
+      Cantarell, 
+      'Helvetica Neue', 
+      Arial, 
+      'Noto Sans', 
+      'Apple Color Emoji', 
+      'Segoe UI Emoji', 
+      'Segoe UI Symbol'; 
+      margin: 24px; 
+    }
+    .wrap { 
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    canvas { 
+      border: 1px solid #ddd;
+      image-rendering: pixelated;
+      background: #fff;
+    }
+
+    .tools { 
+      display: grid;
+      gap: 12px;
+    }
+
+    button { 
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fafafa;
+      cursor: pointer;
+    }
+    
+    button:hover { background: #f0f0f0; }
+    .meta { 
+      font-size: 14px; 
+      color: #333;
+      white-space: pre-wrap;
+      background: #f9f9f9;
+      border: 1px dashed #ccc;
+      padding: 12px;
+      border-radius: 8px;
+    }
+    
+    .status { 
+      color: #666; 
+      font-size: 14px; 
+    }
+
+    .tool.active {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Draw!</h1>
+  <p class="status">Dica: desenhe com o mouse. Após <b>3 segundos</b> sem desenhar, o desenho será enviado automaticamente para vetorização.</p>
+  <div class="wrap">
+    <div>
+      <div class="canvas-wrapper" style="position: relative; display: inline-block; width:512px; height:512px;">
+        <canvas id="board" width="256" height="256" style="width:100%;height:100%;cursor:none;"></canvas>
+      </div>
+      <div class="tools" style="margin-top:12px;">
+        <button id="send" class="tool">Enviar</button>
+        <button id="pencil" class="tool active">✏️ Lápis</button>
+        <button id="eraser" class="tool">🩹 Borracha</button>
+        <button id="clear">Limpar</button>
+      
+        <label>
+          Tamanho: <input type="range" id="brushSlider" min="1" max="32" value="4">
+          <span id="brushSizeLabel">4 px</span>
+        </label>
+      </div>
+    </div>
+    <div>
+      <div><strong>Resultado</strong></div>
+      <div id="meta" class="meta">Sem dados ainda.</div>
+    </div>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>
+
