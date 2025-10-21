@@ -39,14 +39,4 @@ async def vectorize(payload: Dict[str, Any]) -> JSONResponse:
     
     return JSONResponse(predict(img))
 
-if __name__ == '__main__':
-    HOST = os.getenv("HOST", "127.0.0.1")
-    PORT = os.getenv("PORT", "3333")
-
-    uvicorn.run(
-        app='main:app',
-        host=HOST,
-        port=int(PORT),
-        reload=True
-    )
 

@@ -66,7 +66,7 @@ build-run: ## Run built Docker container
 ##@ Start Program
 
 run: ## Start Program Using Poetry
-	cd ./src && exec poetry run python main.py
+	cd ./src && exec poetry run uvicorn main:app --reload --host=${HOST} --port=${PORT}
 
 training: ## Start Program Using Poetry
 	cd ./src && exec poetry run python training.py
