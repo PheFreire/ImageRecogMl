@@ -952,17 +952,6 @@ files = [
 windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
-name = "pyrasite"
-version = "2.0"
-description = "Inject code into a running Python process"
-optional = false
-python-versions = "*"
-groups = ["main"]
-files = [
-    {file = "pyrasite-2.0.tar.gz", hash = "sha256:e5f7a36a04379d00a46688c60a8e9bbba7c807526a9252a60cbed8de701f6ccf"},
-]
-
-[[package]]
 name = "pytest"
 version = "8.4.2"
 description = "pytest: simple powerful testing with Python"
@@ -1103,14 +1092,14 @@ jupyter = ["ipywidgets (>=7.5.1,<9)"]
 
 [[package]]
 name = "simple-duck-ml"
-version = "0.1.2"
+version = "0.1.7"
 description = "🦆 A minimal Ml library for Python"
 optional = false
 python-versions = ">=3.12"
 groups = ["main"]
 files = [
-    {file = "simple_duck_ml-0.1.2-py3-none-any.whl", hash = "sha256:083b999fbd8db0d15e94bb51e27ccee050868347c95d20164e1be3c4064d55d5"},
-    {file = "simple_duck_ml-0.1.2.tar.gz", hash = "sha256:3d518c38fa9c06ded8692a5944580790d06f282bea6ac8d4eadc2a3308643fdd"},
+    {file = "simple_duck_ml-0.1.7-py3-none-any.whl", hash = "sha256:368ab5f8747f3ecaa8df4b534aa6bbaefbf9409d3eeb4ce2cdf2dd2324a45a18"},
+    {file = "simple_duck_ml-0.1.7.tar.gz", hash = "sha256:bd2241093e240e3ec7c48af60fec78ae671cfeaf865f8fe49db026754fd99f4a"},
 ]
 
 [package.dependencies]
@@ -1248,4 +1237,4 @@ standard = ["colorama (>=0.4) ; sys_platform == \"win32\"", "httptools (>=0.6.3)
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "b5ca682569abd1c8a595162cc3677f3fe026a25c8ed8856576b546dc9391090a"
+content-hash = "355d9a74eedf963d04de2cb271abc3bb197d144642ff91f290932559a6c7a67f"

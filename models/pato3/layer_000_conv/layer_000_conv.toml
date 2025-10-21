@@ -3,4 +3,7 @@ kernel_shape = [ 5, 5, 1,]
 activation = "relu"
 nodes_num = 4
 stride = 1
-tensors_path = "/Users/phepato/Documents/dev/Lemon/ImageRecogMl/models/pato3/layer_000_conv/layer_000_conv.npz"
+
+[tensors_path] 
+relative = "layer_000_conv/layer_000_conv.npz"
+absolute = "/Users/phepato/Documents/dev/Lemon/ImageRecogMl/models/pato3/layer_000_conv/layer_000_conv.npz"

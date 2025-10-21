@@ -6,8 +6,9 @@ import os
 ROOT = os.getenv("ROOT", os.getcwd())
 MODEL_NAME = os.getenv("MODEL_NAME", "duck")
 MODELS_PATH = os.path.join(ROOT, "models")
+MODEL_PATH = os.path.join(MODELS_PATH, MODEL_NAME)
 
-model = Model.load(os.path.join(MODELS_PATH, MODEL_NAME))
+model = Model.load(MODEL_PATH)
 
 def predict(img: NDArray[np.float64]):
     classes = ["ice_cream", "crab"]

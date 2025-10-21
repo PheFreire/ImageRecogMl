@@ -23,8 +23,6 @@ loaded_normalization = lambda img: normalization(img, (64, 64), True, True)
 classes = ["ice_cream", "crab"]
 datasets = DatasetFactory().load_all(classes, SAMPLES_PER_CLASS, loaded_normalization)
 
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
 layers = [
     ConvolutionalLayer(
         nodes_num=4,
@@ -67,3 +65,4 @@ if __name__ == '__main__':
         )
     
         model.save(MODEL_NAME, MODELS_PATH, overwrite=True)
+

@@ -1,4 +1,9 @@
 [model]
 learning_rate = 0.001
 loss = "cross_entropy"
-layers = [ "/Users/phepato/Documents/dev/Lemon/ImageRecogMl/models/pato3/layer_000_conv/layer_000_conv.toml", "/Users/phepato/Documents/dev/Lemon/ImageRecogMl/models/pato3/layer_001_conv/layer_001_conv.toml", "/Users/phepato/Documents/dev/Lemon/ImageRecogMl/models/pato3/layer_002_flat/layer_002_flat.toml", "/Users/phepato/Documents/dev/Lemon/ImageRecogMl/models/pato3/layer_003_dense/layer_003_dense.toml",]
+layers = [
+  "layer_000_conv/layer_000_conv.toml", 
+  "layer_001_conv/layer_001_conv.toml", 
+  "layer_002_flat/layer_002_flat.toml", 
+  "layer_003_dense/layer_003_dense.toml",
+]
