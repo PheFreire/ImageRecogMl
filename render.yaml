@@ -1,32 +1,32 @@
 services:
   - type: web
+    runtime: python
     name: draw-ml
-    env: python
     plan: free
+    repo: https://github.com/PheFreire/ImageRecogMl.git
     buildCommand: pip install -r requirements.txt
     startCommand: make run
     autoDeploy: true
 
     envVars:
       - key: ROOT
-        value: $ROOT 
+        value: /opt/render/project/src
       - key: API_HOST
-        value: $API_HOST 
+        value: 127.0.0.1 
       - key: API_PORT
-        value: $API_PORT 
+        value: 3333
       - key: LEARNING_RATE
-        value: $LEARNING_RATE 
+        value: 0.001
       - key: MODEL_NAME
-        value: $MODEL_NAME 
+        value: "pato3"
       - key: BATCH_SIZE
-        value: $BATCH_SIZE 
+        value: 5
       - key: EPOCHS
-        value: $EPOCHS 
+        value: 50
       - key: SAMPLES_PER_CLASS
-        value: $SAMPLES_PER_CLASS 
+        value: 1000
 
     disk:
       name: persistent-storage
       mountPath: /data
       sizeGB: 1
-
