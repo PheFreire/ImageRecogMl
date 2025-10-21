@@ -1092,14 +1092,14 @@ jupyter = ["ipywidgets (>=7.5.1,<9)"]
 
 [[package]]
 name = "simple-duck-ml"
-version = "0.1.8"
+version = "0.1.9"
 description = "🦆 A minimal Ml library for Python"
 optional = false
 python-versions = ">=3.12"
 groups = ["main"]
 files = [
-    {file = "simple_duck_ml-0.1.8-py3-none-any.whl", hash = "sha256:7f9d5425c449b4edb3b3fbc63f0ae15b1e5f80a9c44bdaec7095da3b19df3241"},
-    {file = "simple_duck_ml-0.1.8.tar.gz", hash = "sha256:9ef4ff55220ecf7b4b4f90325e8d652c70ce440b63a8bc6a5ebbab96aae18e57"},
+    {file = "simple_duck_ml-0.1.9-py3-none-any.whl", hash = "sha256:8bd67f1926c64d46429c73ddd71ffc6e9d88f785af9bd5277634608e0a51068d"},
+    {file = "simple_duck_ml-0.1.9.tar.gz", hash = "sha256:125cac29e083c252ebccc327e918dc47780f930a1e0d6dfc43c000187a0925ca"},
 ]
 
 [package.dependencies]
@@ -1237,4 +1237,4 @@ standard = ["colorama (>=0.4) ; sys_platform == \"win32\"", "httptools (>=0.6.3)
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "355d9a74eedf963d04de2cb271abc3bb197d144642ff91f290932559a6c7a67f"
+content-hash = "74c21bc218a5d071b7a11db2e2d36149f696e041f283090d795e7d6660777dc3"
