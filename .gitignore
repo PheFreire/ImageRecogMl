@@ -167,3 +167,5 @@ pyrightconfig.json
 .env
 docs/*
 docs
+.DS_Store
+__pycache__

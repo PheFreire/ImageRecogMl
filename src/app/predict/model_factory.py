@@ -4,9 +4,18 @@ import numpy as np
 import os
 
 ROOT = os.getenv("ROOT", os.getcwd())
+print(f"ROOT = \"{ROOT}\"")
+
 MODEL_NAME = os.getenv("MODEL_NAME", "duck")
+print(f"MODEL_NAME = \"{MODEL_NAME}\"")
+
 MODELS_PATH = os.path.join(ROOT, "models")
+print(f"MODELS_PATH = \"{MODELS_PATH}\"")
+
 MODEL_PATH = os.path.join(MODELS_PATH, MODEL_NAME)
+print(f"MODEL_PATH = \"{MODEL_PATH}\"")
+
+print(f"CWD = \"{os.getcwd()}\"")
 
 model = Model.load(MODEL_PATH)
 
