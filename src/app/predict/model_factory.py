@@ -4,18 +4,20 @@ import numpy as np
 import os
 
 ROOT = os.getenv("ROOT", os.getcwd())
-print(f"ROOT = \"{ROOT}\"")
-
 MODEL_NAME = os.getenv("MODEL_NAME", "duck")
-print(f"MODEL_NAME = \"{MODEL_NAME}\"")
-
 MODELS_PATH = os.path.join(ROOT, "models")
-print(f"MODELS_PATH = \"{MODELS_PATH}\"")
-
 MODEL_PATH = os.path.join(MODELS_PATH, MODEL_NAME)
-print(f"MODEL_PATH = \"{MODEL_PATH}\"")
 
 print(f"CWD = \"{os.getcwd()}\"")
+
+for key, path in {"ROOT": ROOT, "MODEL_NAME": MODEL_NAME, "MODELS_PATH": MODELS_PATH, "MODEL_PATH": MODEL_PATH, }.items():
+    print(f"{key} = \"{path}\" exists = {os.path.exists(path)}")
+    print(f"[LIST DIR: {path}]")
+    if os.path.exists(path):
+        for dir in os.listdir(path):
+            print(dir)
+    print("-="*15)
+
 
 model = Model.load(MODEL_PATH)
 
