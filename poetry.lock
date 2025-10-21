@@ -1092,14 +1092,14 @@ jupyter = ["ipywidgets (>=7.5.1,<9)"]
 
 [[package]]
 name = "simple-duck-ml"
-version = "0.1.7"
+version = "0.1.8"
 description = "🦆 A minimal Ml library for Python"
 optional = false
 python-versions = ">=3.12"
 groups = ["main"]
 files = [
-    {file = "simple_duck_ml-0.1.7-py3-none-any.whl", hash = "sha256:368ab5f8747f3ecaa8df4b534aa6bbaefbf9409d3eeb4ce2cdf2dd2324a45a18"},
-    {file = "simple_duck_ml-0.1.7.tar.gz", hash = "sha256:bd2241093e240e3ec7c48af60fec78ae671cfeaf865f8fe49db026754fd99f4a"},
+    {file = "simple_duck_ml-0.1.8-py3-none-any.whl", hash = "sha256:7f9d5425c449b4edb3b3fbc63f0ae15b1e5f80a9c44bdaec7095da3b19df3241"},
+    {file = "simple_duck_ml-0.1.8.tar.gz", hash = "sha256:9ef4ff55220ecf7b4b4f90325e8d652c70ce440b63a8bc6a5ebbab96aae18e57"},
 ]
 
 [package.dependencies]
