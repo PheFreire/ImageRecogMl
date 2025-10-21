@@ -61,7 +61,7 @@ build: ## Build Docker container
 
 build-run: ## Run built Docker container
 	echo "🐳 Running Docker container on \033[36mhttp://localhost:8000\033[0m..."
-	sudo docker run --rm -p 0.0.0.0:${API_PORT}:${API_PORT} -it research_test
+	sudo docker run --rm -p 0.0.0.0:${PORT}:${PORT} -it research_test
 
 ##@ Start Program
 

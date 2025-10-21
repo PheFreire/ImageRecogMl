@@ -11,14 +11,14 @@ services:
     envVars:
       - key: ROOT
         value: /opt/render/project/src
-      - key: API_HOST
-        value: 127.0.0.1 
-      - key: API_PORT
+      - key: HOST
+        value: 0.0.0.0 
+      - key: PORT
         value: 3333
       - key: LEARNING_RATE
         value: 0.001
       - key: MODEL_NAME
-        value: "pato3"
+        value: pato3
       - key: BATCH_SIZE
         value: 5
       - key: EPOCHS
