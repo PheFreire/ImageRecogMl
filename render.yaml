@@ -25,6 +25,8 @@ services:
         value: 50
       - key: SAMPLES_PER_CLASS
         value: 1000
+      - key: LOADED_LABELS
+        value: "ice_cream | crab"
 
     disk:
       name: persistent-storage
