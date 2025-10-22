@@ -3,6 +3,8 @@ from simple_duck_ml import Model
 import numpy as np
 import os
 
+from app.utils.show_img import show_img
+
 ROOT = os.getenv("ROOT", os.getcwd())
 MODEL_NAME = os.getenv("MODEL_NAME", "duck")
 MODELS_PATH = os.path.join(ROOT, "models")
@@ -21,8 +23,12 @@ for key, path in {"ROOT": ROOT, "MODEL_NAME": MODEL_NAME, "MODELS_PATH": MODELS_
 
 model = Model.load(MODEL_PATH)
 
+def get_labels():
+    envs = os.getenv("LOADED_LABELS", "").split("|")
+    return [label.strip() for label in envs]
+
 def predict(img: NDArray[np.float64]):
-    classes = ["ice_cream", "crab"]
+    classes = get_labels()
 
     pred = model.forward(img)
     predicted = classes[int(np.argmax(pred))]

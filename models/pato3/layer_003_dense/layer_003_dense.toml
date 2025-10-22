@@ -3,6 +3,6 @@ input_size = 26912
 activation = "softmax"
 layer_type = "dense"
 
-[tensors_path] 
-relative = "layer_003_dense/layer_003_dense.npz"
+[tensors_path]
 absolute = "/Users/phepato/Documents/dev/Lemon/ImageRecogMl/models/pato3/layer_003_dense/layer_003_dense.npz"
+relative = "layer_003_dense/layer_003_dense.npz"

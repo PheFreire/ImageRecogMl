@@ -5,95 +5,197 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Draw ML</title>
   <style>
-    body { 
-      font-family: system-ui, 
-      -apple-system, 
-      Segoe UI, 
-      Roboto, 
-      Ubuntu, 
-      Cantarell, 
-      'Helvetica Neue', 
-      Arial, 
-      'Noto Sans', 
-      'Apple Color Emoji', 
-      'Segoe UI Emoji', 
-      'Segoe UI Symbol'; 
-      margin: 24px; 
+    :root {
+      --border: #e0e0e0;
+      --bg-light: #f9f9f9;
+      --bg-dark: #111;
+      --accent: #0078ff;
+      --text: #222;
+      --muted: #666;
+      --radius: 10px;
+      --shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
+
+    body { 
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif;
+      background: #fff;
+      color: var(--text);
+      margin: 40px auto;
+      max-width: 1000px;
+      line-height: 1.5;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: 28px;
+      letter-spacing: -0.5px;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
     .wrap { 
       display: grid;
       grid-template-columns: 1fr 320px;
-      gap: 24px;
+      gap: 36px;
       align-items: start;
     }
 
-    canvas { 
-      border: 1px solid #ddd;
-      image-rendering: pixelated;
-      background: #fff;
+    .canvas-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 512px;
+      height: 512px;
     }
 
-    .tools { 
-      display: grid;
-      gap: 12px;
+    canvas { 
+      image-rendering: pixelated;
+      cursor: crosshair;
+      border-radius: var(--radius);
+      background: #fff;
+      width: 512px;
+      height: 512px;
+    }
+
+    .tools {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
     button { 
-      padding: 8px 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background: #fafafa;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
       cursor: pointer;
-    }
-    
-    button:hover { background: #f0f0f0; }
-    .meta { 
-      font-size: 14px; 
-      color: #333;
-      white-space: pre-wrap;
-      background: #f9f9f9;
-      border: 1px dashed #ccc;
-      padding: 12px;
-      border-radius: 8px;
-    }
-    
-    .status { 
-      color: #666; 
-      font-size: 14px; 
+      font-weight: 500;
+      transition: all 0.2s;
+      box-shadow: var(--shadow);
     }
 
+    button:hover { background: var(--bg-light); }
+
     .tool.active {
-      background: #000;
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    label {
+      font-size: 14px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    input[type="range"] {
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    /* Painel lateral */
+    .side-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .meta {
+      font-size: 13px; 
+      color: var(--muted);
+      background: var(--bg-light);
+      border: 1px dashed var(--border);
+      padding: 12px;
+      border-radius: var(--radius);
+      white-space: pre-wrap;
+      box-shadow: var(--shadow);
+    }
+
+    .labels { 
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .label-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .label-ball {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: #fff;
-      border-color: #000;
+      font-weight: 600;
+      font-size: 13px;
+      background-color: #ccc;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .label-ball.active {
+      background-color: #2ecc71;
+      transform: scale(1.05);
+    }
+
+    strong {
+      font-size: 16px;
+      color: var(--text);
     }
   </style>
 </head>
+
 <body>
-  <h1>Draw!</h1>
-  <p class="status">Dica: desenhe com o mouse. Após <b>3 segundos</b> sem desenhar, o desenho será enviado automaticamente para vetorização.</p>
+  <h1>🖌️ Draw ML</h1>
+  <p class="status">
+    Dica: desenhe com o mouse e pressione <b>Enviar</b> para que o desenho seja vetorizado e processado pela rede neural.
+  </p>
+
   <div class="wrap">
     <div>
-      <div class="canvas-wrapper" style="position: relative; display: inline-block; width:512px; height:512px;">
-        <canvas id="board" width="256" height="256" style="width:100%;height:100%;cursor:none;"></canvas>
+      <div class="canvas-wrapper">
+        <canvas id="board" width="256" height="256"></canvas>
       </div>
-      <div class="tools" style="margin-top:12px;">
-        <button id="send" class="tool">Enviar</button>
+
+      <div class="tools">
+        <button id="send" class="tool">🚀 Enviar</button>
         <button id="pencil" class="tool active">✏️ Lápis</button>
         <button id="eraser" class="tool">🩹 Borracha</button>
-        <button id="clear">Limpar</button>
-      
-        <label>
-          Tamanho: <input type="range" id="brushSlider" min="1" max="32" value="4">
-          <span id="brushSizeLabel">4 px</span>
+        <button id="clear">🧽 Limpar</button>
+        <label id="sizeLabel">
+          Tamanho: <input type="range" id="eraseSlider" min="1" max="32" value="4">
+          <span id="eraseSizeLabel">4 px</span>
         </label>
       </div>
     </div>
-    <div>
+
+    <div class="side-panel">
       <div><strong>Resultado</strong></div>
       <div id="meta" class="meta">Sem dados ainda.</div>
+      <div id="labels" class="labels"></div>
     </div>
   </div>
+
   <script src="/static/script.js"></script>
 </body>
 </html>

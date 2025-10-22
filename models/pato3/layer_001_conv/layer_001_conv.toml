@@ -4,6 +4,6 @@ activation = "relu"
 nodes_num = 8
 stride = 1
 
-[tensors_path] 
-relative = "layer_001_conv/layer_001_conv.npz"
+[tensors_path]
 absolute = "/Users/phepato/Documents/dev/Lemon/ImageRecogMl/models/pato3/layer_001_conv/layer_001_conv.npz"
+relative = "layer_001_conv/layer_001_conv.npz"
