@@ -1,0 +1,9 @@
+layer_type = "conv"
+kernel_shape = [ 5, 5, 1,]
+activation = "relu"
+nodes_num = 4
+stride = 1
+
+[tensors_path]
+absolute = "/Users/phepato/Documents/dev/Lemon/ImageRecogMl/models/test_normalization/layer_000_conv/layer_000_conv.npz"
+relative = "layer_000_conv/layer_000_conv.npz"

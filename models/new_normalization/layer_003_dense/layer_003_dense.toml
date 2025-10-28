@@ -1,0 +1,8 @@
+output_size = 2
+input_size = 500000
+activation = "softmax"
+layer_type = "dense"
+
+[tensors_path]
+absolute = "/Users/phepato/Documents/dev/Lemon/ImageRecogMl/models/new_normalization/layer_003_dense/layer_003_dense.npz"
+relative = "layer_003_dense/layer_003_dense.npz"

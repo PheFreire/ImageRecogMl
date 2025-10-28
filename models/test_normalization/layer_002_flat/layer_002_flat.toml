@@ -1,0 +1,3 @@
+layer_type = "flat"
+input_shape = [ 58, 58, 8,]
+batch_size = 1

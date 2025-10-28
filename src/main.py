@@ -35,9 +35,8 @@ async def vectorize(payload: Dict[str, Any]) -> JSONResponse:
     b64 = payload.get("imageDataURL", "")
     img = normalization(
         img=B64Serializer().to_gray_nd_array(b64),
-        resize=(64, 64),
-        binarize=True,
-        black_background=True
+        resize=64,
+        apply_augment=False
     )
     
     return JSONResponse(predict(img))

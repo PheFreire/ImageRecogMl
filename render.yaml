@@ -18,7 +18,7 @@ services:
       - key: LEARNING_RATE
         value: 0.001
       - key: MODEL_NAME
-        value: pato3
+        value: test_normalization
       - key: BATCH_SIZE
         value: 5
       - key: EPOCHS

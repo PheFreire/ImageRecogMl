@@ -21,15 +21,14 @@ for key, path in {"ROOT": ROOT, "MODEL_NAME": MODEL_NAME, "MODELS_PATH": MODELS_
     print("-="*15)
 
 
-model = Model.load(MODEL_PATH)
-
 def get_labels():
     envs = os.getenv("LOADED_LABELS", "").split("|")
     return [label.strip() for label in envs]
 
 def predict(img: NDArray[np.float64]):
+    model = Model.load(MODEL_PATH)
     classes = get_labels()
-
+    
     pred = model.forward(img)
     predicted = classes[int(np.argmax(pred))]
     
